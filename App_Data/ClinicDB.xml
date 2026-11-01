@@ -1,0 +1,202 @@
+<?xml version="1.0" standalone="yes"?>
+<ClinicData>
+  <xs:schema id="ClinicData" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="ClinicData" msdata:IsDataSet="true" msdata:Locale="en-US">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Users">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="UserId" type="xs:string" minOccurs="0" />
+                <xs:element name="FullName" type="xs:string" minOccurs="0" />
+                <xs:element name="Email" type="xs:string" minOccurs="0" />
+                <xs:element name="Password" type="xs:string" minOccurs="0" />
+                <xs:element name="Phone" type="xs:string" minOccurs="0" />
+                <xs:element name="Role" type="xs:string" minOccurs="0" />
+                <xs:element name="CreatedAt" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Doctors">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="DoctorId" type="xs:string" minOccurs="0" />
+                <xs:element name="UserId" type="xs:string" minOccurs="0" />
+                <xs:element name="DoctorName" type="xs:string" minOccurs="0" />
+                <xs:element name="Specialization" type="xs:string" minOccurs="0" />
+                <xs:element name="Qualification" type="xs:string" minOccurs="0" />
+                <xs:element name="ExperienceYears" type="xs:string" minOccurs="0" />
+                <xs:element name="ConsultationFee" type="xs:string" minOccurs="0" />
+                <xs:element name="RoomNumber" type="xs:string" minOccurs="0" />
+                <xs:element name="AvailableDays" type="xs:string" minOccurs="0" />
+                <xs:element name="PatientCount" type="xs:string" minOccurs="0" />
+                <xs:element name="Rating" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Appointments">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="AppointmentId" type="xs:string" minOccurs="0" />
+                <xs:element name="PatientId" type="xs:string" minOccurs="0" />
+                <xs:element name="DoctorId" type="xs:string" minOccurs="0" />
+                <xs:element name="AppointmentDate" type="xs:string" minOccurs="0" />
+                <xs:element name="TimeSlot" type="xs:string" minOccurs="0" />
+                <xs:element name="Symptoms" type="xs:string" minOccurs="0" />
+                <xs:element name="Status" type="xs:string" minOccurs="0" />
+                <xs:element name="DoctorNotes" type="xs:string" minOccurs="0" />
+                <xs:element name="CreatedAt" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Users>
+    <UserId>1</UserId>
+    <FullName>System Administrator</FullName>
+    <Email>admin@clinic.com</Email>
+    <Password>Admin@123</Password>
+    <Phone>9876543210</Phone>
+    <Role>Admin</Role>
+    <CreatedAt>2026-10-31T10:00:00</CreatedAt>
+  </Users>
+  <Users>
+    <UserId>2</UserId>
+    <FullName>Dr. Rajesh Sharma</FullName>
+    <Email>dr.sharma@clinic.com</Email>
+    <Password>Doctor@123</Password>
+    <Phone>9876543211</Phone>
+    <Role>Doctor</Role>
+    <CreatedAt>2026-10-31T10:00:00</CreatedAt>
+  </Users>
+  <Users>
+    <UserId>3</UserId>
+    <FullName>Dr. Priya Nair</FullName>
+    <Email>dr.priya@clinic.com</Email>
+    <Password>Doctor@123</Password>
+    <Phone>9876543212</Phone>
+    <Role>Doctor</Role>
+    <CreatedAt>2026-10-31T10:00:00</CreatedAt>
+  </Users>
+  <Users>
+    <UserId>4</UserId>
+    <FullName>Dr. Rahul Verma</FullName>
+    <Email>dr.rahul@clinic.com</Email>
+    <Password>Doctor@123</Password>
+    <Phone>9876543213</Phone>
+    <Role>Doctor</Role>
+    <CreatedAt>2026-10-31T10:00:00</CreatedAt>
+  </Users>
+  <Users>
+    <UserId>5</UserId>
+    <FullName>Amit Patel</FullName>
+    <Email>amit@example.com</Email>
+    <Password>Patient@123</Password>
+    <Phone>9876543220</Phone>
+    <Role>Patient</Role>
+    <CreatedAt>2026-10-31T10:00:00</CreatedAt>
+  </Users>
+  <Users>
+    <UserId>6</UserId>
+    <FullName>Neha Singh</FullName>
+    <Email>neha@example.com</Email>
+    <Password>Patient@123</Password>
+    <Phone>9876543221</Phone>
+    <Role>Patient</Role>
+    <CreatedAt>2026-10-31T10:00:00</CreatedAt>
+  </Users>
+  <Users>
+    <UserId>7</UserId>
+    <FullName>Anjali Kapoor</FullName>
+    <Email>anjali124@clinic.com</Email>
+    <Password>anshu123</Password>
+    <Phone>8968465026</Phone>
+    <Role>Patient</Role>
+    <CreatedAt>01-11-2026 12:33:23 AM</CreatedAt>
+  </Users>
+  <Doctors>
+    <DoctorId>1</DoctorId>
+    <UserId>2</UserId>
+    <DoctorName>Dr. Rajesh Sharma</DoctorName>
+    <Specialization>Cardiology</Specialization>
+    <Qualification>MBBS, MD, DM (Cardiology) - AIIMS Gold Medalist</Qualification>
+    <ExperienceYears>14</ExperienceYears>
+    <ConsultationFee>800</ConsultationFee>
+    <RoomNumber>Chamber 101</RoomNumber>
+    <AvailableDays>Mon, Wed, Fri (10:00 AM - 04:00 PM)</AvailableDays>
+    <PatientCount>1,850+</PatientCount>
+    <Rating>4.9</Rating>
+  </Doctors>
+  <Doctors>
+    <DoctorId>2</DoctorId>
+    <UserId>3</UserId>
+    <DoctorName>Dr. Priya Nair</DoctorName>
+    <Specialization>Dermatology</Specialization>
+    <Qualification>MBBS, MD (Dermatology &amp; Cosmetology)</Qualification>
+    <ExperienceYears>9</ExperienceYears>
+    <ConsultationFee>600</ConsultationFee>
+    <RoomNumber>Chamber 204</RoomNumber>
+    <AvailableDays>Tue, Thu, Sat (11:00 AM - 05:00 PM)</AvailableDays>
+    <PatientCount>1,420+</PatientCount>
+    <Rating>4.8</Rating>
+  </Doctors>
+  <Doctors>
+    <DoctorId>3</DoctorId>
+    <UserId>4</UserId>
+    <DoctorName>Dr. Rahul Verma</DoctorName>
+    <Specialization>General Medicine</Specialization>
+    <Qualification>MBBS, MD (Internal Medicine), FACP</Qualification>
+    <ExperienceYears>11</ExperienceYears>
+    <ConsultationFee>500</ConsultationFee>
+    <RoomNumber>Chamber 105</RoomNumber>
+    <AvailableDays>Mon - Sat (09:00 AM - 02:00 PM)</AvailableDays>
+    <PatientCount>2,100+</PatientCount>
+    <Rating>4.9</Rating>
+  </Doctors>
+  <Appointments>
+    <AppointmentId>1</AppointmentId>
+    <PatientId>5</PatientId>
+    <DoctorId>1</DoctorId>
+    <AppointmentDate>2026-11-01</AppointmentDate>
+    <TimeSlot>10:00 AM - 10:30 AM</TimeSlot>
+    <Symptoms>Mild chest tightness during exercise, occasional fatigue</Symptoms>
+    <Status>Completed</Status>
+    <DoctorNotes>Advised resting ECG and routine lipid profile checkup.</DoctorNotes>
+    <CreatedAt>2026-10-31T11:00:00</CreatedAt>
+  </Appointments>
+  <Appointments>
+    <AppointmentId>2</AppointmentId>
+    <PatientId>6</PatientId>
+    <DoctorId>2</DoctorId>
+    <AppointmentDate>2026-11-02</AppointmentDate>
+    <TimeSlot>11:30 AM - 12:00 PM</TimeSlot>
+    <Symptoms>Dry skin patches and mild allergy on forearm</Symptoms>
+    <Status>Pending</Status>
+    <DoctorNotes />
+    <CreatedAt>2026-10-31T11:30:00</CreatedAt>
+  </Appointments>
+  <Appointments>
+    <AppointmentId>3</AppointmentId>
+    <PatientId>5</PatientId>
+    <DoctorId>3</DoctorId>
+    <AppointmentDate>2026-10-31</AppointmentDate>
+    <TimeSlot>09:30 AM - 10:00 AM</TimeSlot>
+    <Symptoms>High fever, sore throat and joint aches for 2 days</Symptoms>
+    <Status>Completed</Status>
+    <DoctorNotes>Diagnosed acute seasonal viral fever. Prescribed Paracetamol 650mg TDS, warm saline gargles, and 3 days complete bed rest.</DoctorNotes>
+    <CreatedAt>2026-10-31T09:00:00</CreatedAt>
+  </Appointments>
+  <Appointments>
+    <AppointmentId>4</AppointmentId>
+    <PatientId>5</PatientId>
+    <DoctorId>2</DoctorId>
+    <AppointmentDate>02-11-2026 12:00:00 AM</AppointmentDate>
+    <TimeSlot>04:00 PM - 04:30 PM</TimeSlot>
+    <Symptoms>i have severe pigmentation and skin redness due to recent use of Vitamin C face serum inappropriately</Symptoms>
+    <Status>Confirmed</Status>
+    <DoctorNotes />
+    <CreatedAt>01-11-2026 12:31:06 AM</CreatedAt>
+  </Appointments>
+</ClinicData>

@@ -1,0 +1,18 @@
+## Build & temporary output
+[Bb]in/
+[Oo]bj/
+publish/
+ClinicManagement_Deploy.zip
+tools/
+
+## Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Temporary / OS
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
