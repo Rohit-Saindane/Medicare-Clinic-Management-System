@@ -234,3 +234,63 @@ d:\NET Project\
 & "C:\Program Files\IIS Express\iisexpress.exe" /path:"$PWD" /port:8080
 ```
 Then visit `http://localhost:8080/Default.aspx`.
+
+---
+
+## ☁️ Free Cloud Hosting Guide (MonsterASP.NET)
+
+You can host this project 100% free with no credit card required:
+
+1. Create a free account on [MonsterASP.NET](https://www.monsterasp.net/).
+2. Create a new website with runtime configured to **.NET Framework 4.8**.
+3. Open the **File Manager** $\rightarrow$ navigate into `wwwroot/`.
+4. Upload `ClinicManagement_Deploy.zip` (or upload the `.aspx` files, `Web.config`, `Site.Master`, `bin/`, and `App_Data/`).
+5. Extract the ZIP in `wwwroot/`.
+6. Visit your free domain (e.g. `https://your-site.monsterasp.net/Default.aspx`). The self-contained XML engine runs out of the box!
+
+---
+
+## 🎓 B.Tech Viva & Interview Cheat Sheet
+
+### 1. What is ADO.NET and how is it used in this project?
+> **Answer**: ADO.NET (ActiveX Data Objects .NET) is Microsoft’s data access architecture in .NET. In this project, all database operations are decoupled inside `Helpers/DBHelper.cs` using core ADO.NET classes: `SqlConnection`, `SqlCommand`, `SqlDataReader`, `SqlDataAdapter`, and `DataTable`.
+
+### 2. What is the difference between Connected and Disconnected Architecture in ADO.NET?
+> **Answer**:
+> - **Connected Architecture**: Requires a live, continuous database connection while reading records. Implemented using **`SqlDataReader`** (e.g. `Login.aspx.cs` for fast, lightweight, forward-only stream authentication).
+> - **Disconnected Architecture**: Connects, fetches the data into client memory (`DataTable`/`DataSet`), and immediately releases the connection. Implemented using **`SqlDataAdapter`** (e.g. `DoctorDashboard.aspx.cs` and `Default.aspx.cs` to bind data to UI controls).
+
+### 3. Explain `ExecuteNonQuery`, `ExecuteScalar`, and `ExecuteReader`.
+> **Answer**:
+> - `ExecuteNonQuery()`: Executes statements that mutate state (`INSERT`, `UPDATE`, `DELETE`) and returns the number of rows affected.
+> - `ExecuteScalar()`: Executes a query and returns only the single value in the first column of the first row (used in `SELECT COUNT(*)` for conflict checking).
+> - `ExecuteReader()`: Returns a forward-only `SqlDataReader` stream for reading complete row sets sequentially.
+
+### 4. How does the system prevent SQL Injection attacks?
+> **Answer**: By strictly using **Parameterized Queries** (`cmd.Parameters.Add(new SqlParameter(...))`). Parameters treat user inputs strictly as literal values instead of executable SQL fragments, eliminating SQL injection vulnerability.
+
+### 5. Why is `if (!IsPostBack)` checked inside `Page_Load`?
+> **Answer**: `IsPostBack` indicates whether the page is being rendered for the first time or posted back to the server due to a user control event (such as a dropdown selection or button click). Checking `!IsPostBack` ensures heavy database calls and control initializations occur only once, preserving ViewState across round trips.
+
+### 6. How does the slot conflict-prevention algorithm work?
+> **Answer**: Before saving an appointment, `BookAppointment.aspx.cs` executes an ADO.NET scalar validation:
+> ```sql
+> SELECT COUNT(*) FROM Appointments 
+> WHERE DoctorId = @DocId AND AppointmentDate = @AppDate 
+>   AND TimeSlot = @TimeSlot AND Status <> 'Cancelled'
+> ```
+> If the count is greater than 0, the booking is rejected with an on-screen warning, guaranteeing zero double-booking.
+
+### 7. What is a Master Page (`Site.Master`) and why is it used?
+> **Answer**: A Master Page provides a uniform layout, navigation bar, footer, and styling across all web forms. Content pages (`.aspx`) inject their unique content inside `<asp:Content ContentPlaceHolderID="..." runat="server">` blocks without duplicating header and footer code.
+
+### 8. What is the difference between `Session` and `ViewState`?
+> **Answer**:
+> - `Session`: Stored on the **server**, persists across multiple pages throughout a user's entire visit (used in `SessionHelper.cs` to track logged-in user credentials and roles).
+> - `ViewState`: Stored on the **client** inside a hidden HTML input (`__VIEWSTATE`), preserves control properties between round trips on the **same single page**.
+
+---
+
+## 📜 License
+This project is open-source and available under the [MIT License](LICENSE).
+Created for educational purposes by **Rohit Saindane**.
